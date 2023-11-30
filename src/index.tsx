@@ -18,9 +18,9 @@ const blackList: string[] = [
   'Tour',
 ];
 
-const defaultNode = () => (
+const defaultNode = (keys?: string[]) => (
   <>
-    {Object.keys(antd)
+    {Object.keys(keys || antd)
       .filter(
         (name) =>
           !blackList.includes(name) && name[0] === name[0].toUpperCase(),
@@ -42,11 +42,11 @@ const defaultNode = () => (
   </>
 );
 
-export function extractStyle(customTheme?: CustomRender): string {
+export function extractStyle(customTheme?: CustomRender, keys?: string[]): string {
   const cache = createCache();
   renderToString(
     <StyleProvider cache={cache}>
-      {customTheme ? customTheme(defaultNode()) : defaultNode()}
+      {customTheme ? customTheme(defaultNode(keys)) : defaultNode(keys)}
     </StyleProvider>,
   );
 

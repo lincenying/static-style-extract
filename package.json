@@ -1,6 +1,6 @@
 {
-  "name": "@ant-design/static-style-extract",
-  "version": "1.0.2",
+  "name": "@lincy/static-style-extract",
+  "version": "1.0.0",
   "description": "support generate static css for SSR usage to generate raw css file for caching.",
   "engines": {
     "node": ">=8.x"
@@ -32,7 +32,8 @@
     "lint": "eslint src/ docs/examples/ --ext .tsx,.ts,.jsx,.js",
     "test": "rc-test",
     "coverage": "rc-test --coverage",
-    "now-build": "npm run build"
+    "now-build": "npm run build",
+    "release": "npm publish -r --access public"
   },
   "devDependencies": {
     "@rc-component/father-plugin": "^1.0.0",
