@@ -1,7 +1,7 @@
 {
   "name": "@lincy/static-style-extract",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "support generate static css for SSR usage to generate raw css file for caching.",
   "author": "kinertang <1127031143@qq.com>",
   "license": "MIT",
