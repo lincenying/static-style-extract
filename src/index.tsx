@@ -7,6 +7,7 @@ import {
 import * as antd from 'antd';
 import { renderToString } from 'react-dom/server';
 import type { CustomRender } from './interface';
+import { ConfigProvider } from 'antd';
 const blackList: string[] = [
   'ConfigProvider',
   'Drawer',
@@ -45,8 +46,10 @@ const defaultNode = (keys?: Record<string, any>) => (
 export function extractStyle(customTheme?: CustomRender, keys?: Record<string, any>): string {
   const cache = createCache();
   renderToString(
-    <StyleProvider cache={cache}>
-      {customTheme ? customTheme(defaultNode(keys)) : defaultNode(keys)}
+    <StyleProvider cache={cache} hashPriority="high">
+      <ConfigProvider theme={{ hashed: false }}>
+        {customTheme ? customTheme(defaultNode(keys)) : defaultNode(keys)}
+      </ConfigProvider>
     </StyleProvider>,
   );
 
