@@ -26,13 +26,13 @@ Provide a lib like @ant-design/static-style-extract to support generate static c
 ## Install
 
 ```bash
-npm install @ant-design/static-style-extract
+npm install @lincy/static-style-extract
 ```
 
 ## Usage
 
 ```tsx | pure
-import extractStyle from `@ant-design/static-style-extract`;
+import extractStyle from `@lincy/static-style-extract`;
 
 const cssText = extractStyle(); // :where(.css-bAMboOo).ant-btn ...
 
@@ -41,7 +41,7 @@ const cssText = extractStyle(); // :where(.css-bAMboOo).ant-btn ...
 use with custom theme
 
 ```tsx | pure
-import extractStyle from `@ant-design/static-style-extract`;
+import extractStyle from `@lincy/static-style-extract`;
 
 const cssText = extractStyle(); // :where(.css-bAMboOo).ant-btn ...
 
@@ -50,6 +50,21 @@ const cssText = extractStyle((node) => (
     {node}
   </ConfigProvider>
 ));
+```
+
+use with custom module
+
+```tsx | pure
+import extractStyle from `@lincy/static-style-extract`;
+import { Button, Input } from 'antd'
+
+const cssText = extractStyle(); // :where(.css-bAMboOo).ant-btn ...
+
+const cssText = extractStyle((node) => (
+  <ConfigProvider theme={theme}>
+    {node}
+  </ConfigProvider>
+), { Button, Input });
 ```
 
 ## Example

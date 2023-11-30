@@ -18,7 +18,7 @@ const blackList: string[] = [
   'Tour',
 ];
 
-const defaultNode = (keys?: string[]) => (
+const defaultNode = (keys?: Record<string, any>) => (
   <>
     {Object.keys(keys || antd)
       .filter(
@@ -42,7 +42,7 @@ const defaultNode = (keys?: string[]) => (
   </>
 );
 
-export function extractStyle(customTheme?: CustomRender, keys?: string[]): string {
+export function extractStyle(customTheme?: CustomRender, keys?: Record<string, any>): string {
   const cache = createCache();
   renderToString(
     <StyleProvider cache={cache}>
