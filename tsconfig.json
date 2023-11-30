@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "jsx": "preserve",
-    "baseUrl": "./",
     "moduleResolution": "node",
+    "baseUrl": "./",
+    "jsx": "preserve",
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["src/*"],
       "@@/*": [".dumi/tmp/*"],
       "rc-trigger": ["src/index.tsx"]
-    },
-    "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    }
   }
 }
