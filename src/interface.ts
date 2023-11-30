@@ -1,1 +1,1 @@
-export type CustomRender = (node: JSX.Element) => JSX.Element;
+export type CustomRender = (node: JSX.Element) => JSX.Element
